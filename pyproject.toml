@@ -1,0 +1,33 @@
+[project]
+name = "yaaif-mcp-server-template-python"
+version = "0.1.0"
+description = "Reusable Python MCP server template for the YAAIF platform."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "mcp>=1.19.0",
+  "opentelemetry-api>=1.27.0",
+  "opentelemetry-exporter-otlp-proto-http>=1.27.0",
+  "opentelemetry-sdk>=1.27.0",
+  "python-dotenv>=1.0.1",
+  "starlette>=0.40.0",
+  "uvicorn>=0.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.3",
+]
+
+[project.scripts]
+template-mcp-server = "template_mcp_server.main:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
