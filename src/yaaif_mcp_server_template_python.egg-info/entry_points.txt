@@ -1,2 +1,0 @@
-[console_scripts]
-template-mcp-server = template_mcp_server.main:main
